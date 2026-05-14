@@ -1,0 +1,146 @@
+.main-navigation {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 999;
+  color: #201913;
+}
+
+.nav-shell {
+  max-width: 1180px;
+  min-height: 70px;
+  padding: 10px 14px 10px 26px;
+  border-radius: 0 0 8px 8px;
+  border: 1px solid rgba(255, 255, 255, 0.38);
+  background: rgba(255, 253, 248, 0.58);
+  box-shadow: 0 12px 34px rgba(96, 72, 42, 0.06);
+  backdrop-filter: blur(12px) saturate(150%);
+  -webkit-backdrop-filter: blur(12px) saturate(150%);
+}
+
+.brand,
+.brand:hover {
+  color: #17110d;
+  font-family: "Playfair Display", serif;
+  font-size: 1.45rem;
+  font-weight: 900;
+  line-height: 0.94;
+}
+
+.nav-links .nav-link {
+  position: relative;
+  color: #4b4038;
+  padding: 14px 11px 12px;
+  border-radius: 0;
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+.nav-links .nav-link::after {
+  content: "";
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  bottom: 5px;
+  height: 2px;
+  background: transparent;
+}
+
+.nav-links .nav-link:hover,
+.nav-links .nav-link.active {
+  color: #8a6100;
+  background: transparent;
+}
+
+.nav-links .nav-link:hover::after,
+.nav-links .nav-link.active::after {
+  background: #8a6100;
+}
+
+.nav-links .nav-cta,
+.nav-links .nav-cta.active {
+  min-width: 150px;
+  min-height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #3c2b00;
+  background: #ffb703;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 0 20px;
+  border-radius: 8px;
+  box-shadow: 0 12px 26px rgba(255, 183, 3, 0.24);
+}
+
+.nav-links .nav-cta::after {
+  display: none;
+}
+
+.nav-links .nav-cta:hover {
+  color: #3c2b00;
+  background: #ffc531;
+  transform: translateY(-1px);
+}
+
+.menu-toggle {
+  width: 44px;
+  height: 44px;
+  display: inline-grid;
+  place-items: center;
+  border: 1px solid rgba(138, 97, 0, 0.18);
+  border-radius: 8px;
+  color: #17110d;
+  background: rgba(255, 183, 3, 0.12);
+  font-size: 1.35rem;
+}
+
+.menu-toggle:focus {
+  outline: 2px solid rgba(255, 183, 3, 0.65);
+}
+
+@media (max-width: 991.98px) {
+  .main-navigation {
+    padding-inline: 12px;
+  }
+
+  .nav-shell {
+    padding: 10px 12px;
+    border-radius: 0 0 8px 8px;
+  }
+
+  .navbar-collapse {
+    padding-top: 8px;
+  }
+
+  .nav-links {
+    align-items: stretch !important;
+  }
+
+  .nav-links .nav-link {
+    width: 100%;
+    padding: 13px 8px;
+  }
+
+  .nav-links .nav-link::after {
+    left: 8px;
+    right: auto;
+    bottom: 8px;
+    width: 42px;
+  }
+
+  .nav-links .nav-cta {
+    width: 100%;
+    min-height: 50px;
+    margin-top: 8px;
+  }
+}
+
+@media (max-width: 420px) {
+  .brand {
+    font-size: 1.22rem;
+  }
+
+}

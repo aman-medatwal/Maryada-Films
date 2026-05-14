@@ -1,0 +1,136 @@
+.contact {
+  padding-top: 110px;
+}
+
+.contact-blank {
+  min-height: 360px;
+  display: grid;
+  place-items: end start;
+  padding: 24px;
+  border-radius: 6px;
+  border: 1px dashed rgba(138, 97, 0, 0.32);
+  background:
+    linear-gradient(135deg, rgba(35, 23, 15, 0.12), rgba(255, 255, 255, 0.7)),
+    #efe4d3;
+  color: #8a6100;
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.contact-info,
+.contact-form {
+  border-radius: 6px;
+}
+
+.contact-info {
+  background: #fff;
+  overflow: hidden;
+  box-shadow: 0 22px 60px rgba(87, 62, 24, 0.06);
+}
+
+.info-item {
+  min-height: 128px;
+  display: flex;
+  gap: 18px;
+  padding: 26px;
+  border-bottom: 1px solid rgba(138, 97, 0, 0.12);
+}
+
+.info-item:last-child {
+  border-bottom: 0;
+}
+
+.info-item > svg {
+  flex: 0 0 auto;
+  width: 42px;
+  height: 42px;
+  padding: 12px;
+  border-radius: 6px;
+  color: #8a6100;
+  background: rgba(255, 183, 3, 0.13);
+}
+
+.info-item h3 {
+  color: #9a7008;
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.info-item p,
+.info-item a {
+  color: #4f4035;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.contact-form {
+  padding: clamp(22px, 4vw, 38px);
+  background: #fff;
+  box-shadow: 0 22px 60px rgba(87, 62, 24, 0.06);
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 15px 16px;
+  border: 1px solid rgba(138, 97, 0, 0.18);
+  border-radius: 0;
+  background: #fffaf4;
+  color: #23170f;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+.contact-form input {
+  min-height: 52px;
+}
+
+.contact-form textarea {
+  display: block;
+  margin-top: 14px;
+  resize: vertical;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: 2px solid rgba(255, 183, 3, 0.62);
+  border-color: rgba(138, 97, 0, 0.45);
+}
+
+.submit-btn {
+  min-height: 54px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 14px;
+  padding: 0 24px;
+  border: 0;
+  border-radius: 6px;
+  background: #ffb703;
+  color: #3c2b00;
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+@media (max-width: 767.98px) {
+  .contact {
+    padding-top: 104px;
+  }
+
+  .contact-blank {
+    min-height: 280px;
+  }
+
+  .submit-btn {
+    width: 100%;
+  }
+}

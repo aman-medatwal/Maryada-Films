@@ -1,0 +1,110 @@
+.projects {
+  padding-top: 110px;
+}
+
+.project-feature-placeholder,
+.project-thumb {
+  display: grid;
+  place-items: center;
+  border: 1px dashed rgba(138, 97, 0, 0.32);
+  color: rgba(79, 64, 53, 0.62);
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.project-feature-placeholder {
+  min-height: 420px;
+  border-radius: 6px;
+  background:
+    linear-gradient(135deg, rgba(138, 97, 0, 0.09), rgba(255, 255, 255, 0.76)),
+    #f0e5d5;
+}
+
+.project-card {
+  position: relative;
+  border-radius: 0;
+  overflow: hidden;
+  color: #23170f;
+  background: transparent;
+  transition: transform 0.32s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+}
+
+.project-thumb {
+  min-height: 310px;
+  background:
+    linear-gradient(135deg, rgba(138, 97, 0, 0.11), rgba(255, 255, 255, 0.78)),
+    #efe4d3;
+}
+
+.project-body {
+  width: calc(100% - 42px);
+  margin: -64px auto 0;
+  position: relative;
+  z-index: 2;
+  padding: 20px 22px;
+  background: rgba(255, 255, 255, 0.86);
+  box-shadow: 0 18px 48px rgba(87, 62, 24, 0.1);
+  transition: transform 0.32s ease, box-shadow 0.32s ease, background 0.32s ease;
+}
+
+.project-card:hover .project-body {
+  transform: translateY(-8px);
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 26px 70px rgba(87, 62, 24, 0.16);
+}
+
+.project-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #8a6100;
+  font-size: 1.25rem;
+  margin-bottom: 14px;
+}
+
+.project-meta span {
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.project-card p {
+  color: #9a7008;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.72rem;
+  margin-bottom: 10px;
+}
+
+.project-card h3 {
+  color: #2a211b;
+  font-family: "Playfair Display", serif;
+  font-size: 1.55rem;
+  font-weight: 900;
+  margin-bottom: 12px;
+}
+
+.project-card small {
+  display: block;
+  color: #5d4e43;
+  line-height: 1.65;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 767.98px) {
+  .projects {
+    padding-top: 104px;
+  }
+
+  .project-feature-placeholder,
+  .project-thumb {
+    min-height: 280px;
+  }
+}
