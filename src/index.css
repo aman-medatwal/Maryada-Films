@@ -9,8 +9,8 @@ html {
 }
 
 body {
-  background: #fffaf4;
-  color: #23170f;
+  background: #030814;
+  color: #ffffff;
   font-family: "Inter", sans-serif;
 }
 
@@ -34,11 +34,16 @@ textarea {
 
 .page-surface {
   min-height: 100vh;
-  background: linear-gradient(180deg, #fffaf4 0%, #fff1dc 100%);
+  background:
+    radial-gradient(circle at 50% 0%, rgba(22, 113, 167, 0.2), transparent 32%),
+    linear-gradient(90deg, rgba(223, 231, 255, 0.06) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(223, 231, 255, 0.06) 1px, transparent 1px),
+    #030814;
+  background-size: auto, 25% 100%, 100% 160px, auto;
 }
 
 .page-kicker {
-  color: #9a7008;
+  color: #dfe7ff;
   font-size: 0.78rem;
   font-weight: 900;
   letter-spacing: 0.16em;
@@ -52,8 +57,8 @@ textarea {
 }
 
 .page-hero h1 {
-  color: #1f1711;
-  font-family: "Playfair Display", serif;
+  color: #dfe7ff;
+  font-family: "Inter", sans-serif;
   font-size: clamp(2.9rem, 6.5vw, 6.7rem);
   font-weight: 900;
   line-height: 0.98;
@@ -62,17 +67,17 @@ textarea {
 }
 
 .page-hero p:not(.page-kicker) {
-  color: #4f4035;
+  color: rgba(223, 231, 255, 0.62);
   font-size: 1.05rem;
   line-height: 1.78;
 }
 
 .site-footer {
   width: 100%;
-  color: #4f4035;
+  color: rgba(223, 231, 255, 0.62);
   padding: 52px 18px;
-  background: #fff1dc;
-  border-top: 1px solid rgba(138, 97, 0, 0.1);
+  background: #030814;
+  border-top: 1px solid rgba(223, 231, 255, 0.12);
 }
 
 .footer-content {
@@ -88,8 +93,8 @@ textarea {
 }
 
 .footer-content p:first-child {
-  color: #17110d;
-  font-family: "Playfair Display", serif;
+  color: #dfe7ff;
+  font-family: "Inter", sans-serif;
   font-size: 1.7rem;
   font-weight: 900;
   line-height: 0.95;
@@ -110,16 +115,16 @@ textarea {
   height: 38px;
   display: inline-grid;
   place-items: center;
-  border: 1px solid rgba(138, 97, 0, 0.16);
-  border-radius: 8px;
-  color: #8a6100;
+  border: 1px solid rgba(223, 231, 255, 0.18);
+  border-radius: 0;
+  color: #dfe7ff;
   font-size: 1rem;
   transition: color 0.2s ease, background 0.2s ease;
 }
 
 .social-icons a:hover {
-  color: #3c2b00;
-  background: #ffb703;
+  color: #071024;
+  background: #dfe7ff;
 }
 
 .about-card,
@@ -172,8 +177,8 @@ textarea {
 .services-placeholder:hover,
 .contact-blank:hover {
   transform: translateY(-7px) scale(1.015);
-  border-color: rgba(138, 97, 0, 0.56);
-  box-shadow: 0 26px 70px rgba(87, 62, 24, 0.13);
+  border-color: rgba(223, 231, 255, 0.32);
+  box-shadow: 0 26px 70px rgba(0, 0, 0, 0.18);
 }
 
 .work-placeholder:hover::before,
@@ -201,8 +206,8 @@ textarea {
   inset: auto 22px 18px auto;
   width: 54px;
   height: 54px;
-  border-right: 2px solid rgba(138, 97, 0, 0.18);
-  border-bottom: 2px solid rgba(138, 97, 0, 0.18);
+  border-right: 2px solid rgba(223, 231, 255, 0.18);
+  border-bottom: 2px solid rgba(223, 231, 255, 0.18);
   opacity: 0;
   transform: translate(10px, 10px);
   transition: opacity 0.28s ease, transform 0.28s ease;
@@ -229,7 +234,7 @@ textarea {
 .project-card:hover .project-meta svg,
 .hero-info-card:hover svg {
   transform: translateY(-4px) rotate(-4deg);
-  background: rgba(255, 183, 3, 0.26);
+  background: rgba(223, 231, 255, 0.14);
 }
 
 @media (prefers-reduced-motion: reduce) {

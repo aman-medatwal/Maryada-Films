@@ -7,12 +7,12 @@
   display: grid;
   place-items: end start;
   padding: 24px;
-  border-radius: 6px;
-  border: 1px dashed rgba(138, 97, 0, 0.32);
+  border-radius: 0;
+  border: 1px solid rgba(223, 231, 255, 0.14);
   background:
-    linear-gradient(135deg, rgba(35, 23, 15, 0.12), rgba(255, 255, 255, 0.7)),
-    #efe4d3;
-  color: #8a6100;
+    linear-gradient(135deg, rgba(223, 231, 255, 0.12), rgba(3, 8, 20, 0.8)),
+    #071024;
+  color: #dfe7ff;
   font-size: 0.78rem;
   font-weight: 900;
   letter-spacing: 0.12em;
@@ -21,13 +21,14 @@
 
 .contact-info,
 .contact-form {
-  border-radius: 6px;
+  border-radius: 0;
 }
 
 .contact-info {
-  background: #fff;
+  background: rgba(7, 13, 31, 0.72);
   overflow: hidden;
-  box-shadow: 0 22px 60px rgba(87, 62, 24, 0.06);
+  box-shadow: inset 0 0 40px rgba(93, 151, 255, 0.04);
+  border: 1px solid rgba(223, 231, 255, 0.12);
 }
 
 .info-item {
@@ -35,7 +36,7 @@
   display: flex;
   gap: 18px;
   padding: 26px;
-  border-bottom: 1px solid rgba(138, 97, 0, 0.12);
+  border-bottom: 1px solid rgba(223, 231, 255, 0.1);
 }
 
 .info-item:last-child {
@@ -47,13 +48,13 @@
   width: 42px;
   height: 42px;
   padding: 12px;
-  border-radius: 6px;
-  color: #8a6100;
-  background: rgba(255, 183, 3, 0.13);
+  border-radius: 0;
+  color: #dfe7ff;
+  background: rgba(223, 231, 255, 0.1);
 }
 
 .info-item h3 {
-  color: #9a7008;
+  color: #dfe7ff;
   font-size: 0.72rem;
   font-weight: 900;
   letter-spacing: 0.14em;
@@ -63,27 +64,33 @@
 
 .info-item p,
 .info-item a {
-  color: #4f4035;
+  color: rgba(223, 231, 255, 0.62);
   line-height: 1.6;
   margin: 0;
 }
 
 .contact-form {
   padding: clamp(22px, 4vw, 38px);
-  background: #fff;
-  box-shadow: 0 22px 60px rgba(87, 62, 24, 0.06);
+  background: rgba(7, 13, 31, 0.72);
+  box-shadow: inset 0 0 40px rgba(93, 151, 255, 0.04);
+  border: 1px solid rgba(223, 231, 255, 0.12);
 }
 
 .contact-form input,
 .contact-form textarea {
   width: 100%;
   padding: 15px 16px;
-  border: 1px solid rgba(138, 97, 0, 0.18);
+  border: 1px solid rgba(223, 231, 255, 0.16);
   border-radius: 0;
-  background: #fffaf4;
-  color: #23170f;
+  background: rgba(3, 8, 20, 0.54);
+  color: #ffffff;
   font-family: inherit;
   font-size: 1rem;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: rgba(223, 231, 255, 0.44);
 }
 
 .contact-form input {
@@ -98,8 +105,9 @@
 
 .contact-form input:focus,
 .contact-form textarea:focus {
-  outline: 2px solid rgba(255, 183, 3, 0.62);
-  border-color: rgba(138, 97, 0, 0.45);
+  outline: 2px solid rgba(223, 231, 255, 0.36);
+  border-color: rgba(223, 231, 255, 0.36);
+  background: rgba(12, 21, 46, 0.8);
 }
 
 .submit-btn {
@@ -111,14 +119,21 @@
   margin-top: 14px;
   padding: 0 24px;
   border: 0;
-  border-radius: 6px;
-  background: #ffb703;
-  color: #3c2b00;
+  border-radius: 0;
+  background: #dfe7ff;
+  color: #071024;
   font-size: 0.78rem;
   font-weight: 900;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+  background: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.26);
 }
 
 @media (max-width: 767.98px) {
