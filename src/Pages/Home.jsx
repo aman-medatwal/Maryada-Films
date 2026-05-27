@@ -8,7 +8,7 @@ const Home = () => {
   return (
     <div className="home-page">
       <VideoBackground 
-        src="/web_work/CINEMATIC/IMG_0876.MP4" 
+        src="/web_work/CINEMATIC/citysample.mp4" 
         poster="/web_work/CINEMATIC/016.png"
       >
         <div className="hero-content text-center container">
