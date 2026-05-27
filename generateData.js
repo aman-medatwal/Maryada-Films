@@ -2,7 +2,7 @@ import fs from 'fs';
 import path from 'path';
 
 const PUBLIC_DIR = path.join(process.cwd(), 'public');
-const MY_WORK_DIR = path.join(PUBLIC_DIR, 'my_work');
+const MY_WORK_DIR = path.join(PUBLIC_DIR, 'web_work');
 
 const getFiles = (dir) => {
   const dirents = fs.readdirSync(dir, { withFileTypes: true });
