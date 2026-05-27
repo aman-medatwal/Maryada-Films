@@ -1,27 +1,20 @@
-import React from 'react'
-import Navbar from '../Components/NavBar/Navbar'
-import Projects from '../Components/Projects/Projects'
-import { FaLinkedin, FaInstagram, FaFacebook, FaYoutube } from 'react-icons/fa'
+import React from 'react';
+import GalleryGrid from '../Components/GalleryGrid';
 
 const ProjectsPage = () => {
   return (
-    <div>
-      <Navbar />
-      <Projects />
-      <footer className="site-footer">
-        <div className="footer-content">
-          <p>Maryada<br />Films</p>
-          <div className="social-icons">
-            <a href="" target="_blank" rel="noopener noreferrer"><FaLinkedin /></a>
-            <a href="#" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
-            <a href="#" target="_blank" rel="noopener noreferrer"><FaFacebook /></a>
-            <a href="#" target="_blank" rel="noopener noreferrer"><FaYoutube /></a>
-          </div>
-          <p>&copy; 2026 Maryada Films. All rights reserved.</p>
-        </div>
-      </footer>
+    <div className="page-container container section-padding" style={{ marginTop: '80px' }}>
+      <div className="section-header text-center">
+        <h1 className="section-title animate-slide-up">Our Portfolio</h1>
+        <div className="title-separator animate-slide-up delay-100"></div>
+        <p className="section-description animate-slide-up delay-200">
+          A collection of our finest work across various disciplines. Browse through our categories to see what we can create.
+        </p>
+      </div>
+      
+      <GalleryGrid />
     </div>
-  )
-}
+  );
+};
 
-export default ProjectsPage
+export default ProjectsPage;
