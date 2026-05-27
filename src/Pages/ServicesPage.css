@@ -24,11 +24,11 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  background: linear-gradient(to right, var(--secondary-bg) 0%, rgba(17, 17, 17, 0.8) 100%);
+  background: linear-gradient(to right, var(--secondary-bg) 0%, rgba(17,17,17,0.8) 100%);
 }
 
 .service-card:nth-child(even) .service-content {
-  background: linear-gradient(to left, var(--secondary-bg) 0%, rgba(17, 17, 17, 0.8) 100%);
+  background: linear-gradient(to left, var(--secondary-bg) 0%, rgba(17,17,17,0.8) 100%);
 }
 
 .service-content h2 {
@@ -64,20 +64,18 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(5, 5, 5, 0.3);
+  background: rgba(5,5,5,0.3);
 }
 
 @media (max-width: 900px) {
-
-  .service-card,
-  .service-card:nth-child(even) {
+  .service-card, .service-card:nth-child(even) {
     flex-direction: column;
   }
-
+  
   .service-bg {
     min-height: 300px;
   }
-
+  
   .service-content {
     background: var(--secondary-bg) !important;
     padding: 40px 20px;

@@ -11,7 +11,7 @@ const ProjectsPage = () => {
           A collection of our finest work across various disciplines. Browse through our categories to see what we can create.
         </p>
       </div>
-
+      
       <GalleryGrid />
     </div>
   );

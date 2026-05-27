@@ -8,7 +8,7 @@ const AboutPage = () => {
         <h1 className="section-title animate-slide-up">About Maryada Films</h1>
         <div className="title-separator animate-slide-up delay-100"></div>
       </div>
-
+      
       <div className="about-content">
         <div className="about-text glass animate-fade-in delay-200">
           <h2>Who We Are</h2>
@@ -19,7 +19,7 @@ const AboutPage = () => {
             With years of experience in the industry, our dedicated team of artists and technicians work tirelessly to push the boundaries of what's possible, turning imagination into reality.
           </p>
         </div>
-
+        
         <div className="about-stats animate-fade-in delay-300">
           <div className="stat-box glass">
             <h3>10+</h3>
