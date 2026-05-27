@@ -8,8 +8,8 @@ const Home = () => {
   return (
     <div className="home-page">
       <VideoBackground 
-        src="/my_work/CINEMATIC/waterfall_render.mp4" 
-        poster="/my_work/CINEMATIC/01.png"
+        src="/web_work/CINEMATIC/IMG_0876.MP4" 
+        poster="/web_work/CINEMATIC/016.png"
       >
         <div className="hero-content text-center container">
           <h1 className="hero-title animate-slide-up">Vision Meets Reality</h1>
