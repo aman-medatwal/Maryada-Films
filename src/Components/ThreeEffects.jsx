@@ -7,7 +7,8 @@ import * as THREE from 'three';
 // 1. Particle Field (Home Page)
 export const ParticleField = (props) => {
   const ref = useRef();
-  const sphere = random.inSphere(new Float32Array(5000), { radius: 1.5 });
+  // Ensure array length is a multiple of 3 (itemSize=3) to prevent NaN in computeBoundingSphere
+  const sphere = useMemo(() => random.inSphere(new Float32Array(6000), { radius: 1.5 }), []);
 
   useFrame((state, delta) => {
     if (ref.current) {
