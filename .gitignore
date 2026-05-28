@@ -11,7 +11,10 @@ node_modules
 dist
 dist-ssr
 *.local
-public/my_work/
+# Ignore large files in my_work but allow images
+public/my_work/**/*.mp4
+public/my_work/**/*.mov
+public/my_work/**/*.zip
 
 # Editor directories and files
 .vscode/*
