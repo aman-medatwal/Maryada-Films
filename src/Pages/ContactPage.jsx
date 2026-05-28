@@ -41,9 +41,13 @@ const ContactPage = () => {
       />
 
       <section className="contact-form-section">
-        {/* 3D Glowing Spheres Background */}
+        {/* 3D Glowing Spheres Background - OPTIMIZED */}
         <div className="contact-3d-bg">
-          <Canvas camera={{ position: [0, 0, 5] }}>
+          <Canvas 
+            camera={{ position: [0, 0, 5] }} 
+            dpr={[0.1, 0.5]} 
+            gl={{ antialias: false, powerPreference: "high-performance" }}
+          >
             <GlowingSpheresBackground />
           </Canvas>
         </div>
@@ -54,6 +58,7 @@ const ContactPage = () => {
             ref={formCardRef}
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
+            style={{ willChange: 'transform' }}
           >
             <div className="glass-card-header">
               <h2 className="tech-heading mb-2 text-yellow">START PROJECT</h2>

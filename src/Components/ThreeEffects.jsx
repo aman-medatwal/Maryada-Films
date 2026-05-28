@@ -287,19 +287,19 @@ export const GlowingSpheresBackground = () => {
       
       {/* Orange/Yellow Sphere */}
       <mesh ref={sphere1Ref} position={[-2, 2, -5]}>
-        <sphereGeometry args={[2.5, 64, 64]} />
+        <sphereGeometry args={[2.5, 16, 16]} />
         <meshBasicMaterial color="#ffaa00" />
       </mesh>
       
       {/* Magenta/Pink Sphere */}
       <mesh ref={sphere2Ref} position={[3, -1, -8]}>
-        <sphereGeometry args={[3, 64, 64]} />
+        <sphereGeometry args={[3, 16, 16]} />
         <meshBasicMaterial color="#ff0088" />
       </mesh>
       
       {/* Blue/Cyan Sphere */}
       <mesh ref={sphere3Ref} position={[-3, -2, -6]}>
-        <sphereGeometry args={[2.8, 64, 64]} />
+        <sphereGeometry args={[2.8, 16, 16]} />
         <meshBasicMaterial color="#0088ff" />
       </mesh>
     </group>
