@@ -311,7 +311,11 @@ export const GlowingSpheresBackground = () => {
 const ThreeEffectCanvas = ({ effect: Effect }) => {
   return (
     <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', zIndex: 1, pointerEvents: 'none' }}>
-      <Canvas camera={{ position: [0, 0, 5] }}>
+      <Canvas 
+        camera={{ position: [0, 0, 5] }}
+        dpr={[1, 1.5]}
+        gl={{ antialias: false, powerPreference: "high-performance" }}
+      >
         <Effect />
       </Canvas>
     </div>
