@@ -1,105 +1,83 @@
-import React, { useState } from 'react';
+import React, { useRef } from 'react';
+import PageHero from '../Components/PageHero';
+import { Starfield, GlowingSpheresBackground } from '../Components/ThreeEffects';
+import { Canvas } from '@react-three/fiber';
 import './ContactPage.css';
 
 const ContactPage = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
-  });
+  const formCardRef = useRef(null);
 
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+  // 3D Tilt Effect for the Glass Card
+  const handleMouseMove = (e) => {
+    if (!formCardRef.current) return;
+    const card = formCardRef.current;
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+    
+    const rotateX = ((y - centerY) / centerY) * -10; // Max 10 deg tilt
+    const rotateY = ((x - centerX) / centerX) * 10;
+    
+    card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    alert('Thank you for your message! We will get back to you shortly.');
-    setFormData({ name: '', email: '', subject: '', message: '' });
+  const handleMouseLeave = () => {
+    if (!formCardRef.current) return;
+    formCardRef.current.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
   };
 
   return (
-    <div className="page-container container section-padding" style={{ marginTop: '80px' }}>
-      <div className="section-header text-center">
-        <h1 className="section-title animate-slide-up">Start a Project</h1>
-        <div className="title-separator animate-slide-up delay-100"></div>
-        <p className="section-description animate-slide-up delay-200">
-          Ready to create something extraordinary? Drop us a message and let's discuss your vision.
-        </p>
-      </div>
+    <div className="contact-page dark-theme">
+      
+      <PageHero 
+        title="START"
+        subtitle="PROJECT"
+        videoSrc="/my_work/Architectural Visualization/Residential plots.mp4"
+        effect={Starfield}
+        metaText="GET A QUOTE &middot; LET'S TALK"
+      />
 
-      <div className="contact-container animate-fade-in delay-300">
-        <div className="contact-info glass">
-          <h2>Get in Touch</h2>
-          <p>We'd love to hear from you. Whether you have a question about services, pricing, or anything else, our team is ready to answer all your questions.</p>
-          
-          <div className="info-item">
-            <h4>Email</h4>
-            <p>hello@maryadafilms.com</p>
-          </div>
-          
-          <div className="info-item">
-            <h4>Phone</h4>
-            <p>+91 98765 43210</p>
-          </div>
-          
-          <div className="info-item">
-            <h4>Studio</h4>
-            <p>123 Cinematic Way, Film City<br/>Mumbai, Maharashtra, India</p>
-          </div>
+      <section className="contact-form-section">
+        {/* 3D Glowing Spheres Background */}
+        <div className="contact-3d-bg">
+          <Canvas camera={{ position: [0, 0, 5] }}>
+            <GlowingSpheresBackground />
+          </Canvas>
         </div>
 
-        <div className="contact-form glass">
-          <form onSubmit={handleSubmit}>
-            <div className="form-group">
-              <input 
-                type="text" 
-                name="name" 
-                value={formData.name} 
-                onChange={handleChange} 
-                required 
-                placeholder="Your Name"
-              />
+        <div className="contact-content container">
+          <div 
+            className="glass-form-card dark-glass" 
+            ref={formCardRef}
+            onMouseMove={handleMouseMove}
+            onMouseLeave={handleMouseLeave}
+          >
+            <div className="glass-card-header">
+              <h2 className="tech-heading mb-2 text-yellow">START PROJECT</h2>
+              <p className="tech-body text-secondary">Fill out the details below and we will get back to you shortly.</p>
             </div>
             
-            <div className="form-group">
-              <input 
-                type="email" 
-                name="email" 
-                value={formData.email} 
-                onChange={handleChange} 
-                required 
-                placeholder="Your Email"
-              />
-            </div>
-            
-            <div className="form-group">
-              <input 
-                type="text" 
-                name="subject" 
-                value={formData.subject} 
-                onChange={handleChange} 
-                required 
-                placeholder="Subject"
-              />
-            </div>
-            
-            <div className="form-group">
-              <textarea 
-                name="message" 
-                value={formData.message} 
-                onChange={handleChange} 
-                required 
-                placeholder="Tell us about your project..."
-                rows="5"
-              ></textarea>
-            </div>
-            
-            <button type="submit" className="btn-primary" style={{ width: '100%' }}>Send Message</button>
-          </form>
+            <form className="glass-form dark-form">
+              <div className="form-group">
+                <label>NAME</label>
+                <input type="text" placeholder="John Doe" />
+              </div>
+              <div className="form-group">
+                <label>EMAIL</label>
+                <input type="email" placeholder="john@example.com" />
+              </div>
+              <div className="form-group">
+                <label>PROJECT DETAILS</label>
+                <textarea rows="4" placeholder="Tell us about your vision..."></textarea>
+              </div>
+              <button type="button" className="btn-primary w-full mt-6" style={{width: '100%'}}>TRANSMIT</button>
+            </form>
+          </div>
         </div>
-      </div>
+      </section>
     </div>
   );
 };

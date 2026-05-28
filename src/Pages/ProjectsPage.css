@@ -1,0 +1,53 @@
+.projects-page {
+  background-color: #050505;
+  color: #fff;
+  min-height: 100vh;
+}
+
+.projects-3d-canvas-container {
+  width: 100%;
+  max-width: 600px;
+  height: 300px;
+  border: 1px dashed rgba(255, 0, 0, 0.3);
+  background: radial-gradient(circle at center, rgba(255, 0, 0, 0.05), transparent 70%);
+}
+
+.max-w-3xl {
+  max-width: 48rem;
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.workflow-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.workflow-card {
+  background: rgba(10, 10, 10, 0.8);
+  border: 1px solid rgba(255, 170, 0, 0.2);
+  padding: 30px;
+  border-radius: 8px;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.workflow-card:hover {
+  transform: translateY(-10px);
+  border-color: #ffaa00;
+}
+
+.workflow-card h3 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  margin-bottom: 15px;
+}

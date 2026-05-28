@@ -1,70 +1,91 @@
 import React from 'react';
+import PageHero from '../Components/PageHero';
+import { FloatingGeometry } from '../Components/ThreeEffects';
+import PanoramaViewer from '../Components/PanoramaViewer';
 import './ServicesPage.css';
-import { portfolioData } from '../data/portfolioData';
 
 const ServicesPage = () => {
-  const services = [
-    {
-      title: "Cinematic Production",
-      description: "From concept to final cut, we create visually stunning cinematic experiences for films, commercials, and digital platforms.",
-      category: "CINEMATIC"
-    },
-    {
-      title: "CGI & VFX",
-      description: "Pushing the boundaries of reality with high-end computer-generated imagery and visual effects that seamlessly blend with live-action.",
-      category: "CGI"
-    },
-    {
-      title: "Architectural Visualization",
-      description: "Transforming blueprints into hyper-realistic 3D walkthroughs and renders that help you visualize spaces before they are built.",
-      category: "Architectural_Visualization"
-    },
-    {
-      title: "360 & VR",
-      description: "Immersive virtual reality experiences and 360-degree videos that transport your audience to another world.",
-      category: "360,VR"
-    }
-  ];
-
   return (
-    <div className="page-container container section-padding" style={{ marginTop: '80px' }}>
-      <div className="section-header text-center">
-        <h1 className="section-title animate-slide-up">Our Services</h1>
-        <div className="title-separator animate-slide-up delay-100"></div>
-        <p className="section-description animate-slide-up delay-200">
-          We offer a comprehensive suite of creative services tailored to meet the demands of modern visual storytelling.
-        </p>
-      </div>
-
-      <div className="services-list animate-slide-up delay-300">
-        {services.map((service, index) => {
-          // Find a sample media from portfolioData for the background
-          let bgMedia = null;
-          if (portfolioData[service.category] && portfolioData[service.category].length > 0) {
-            bgMedia = portfolioData[service.category][0].src;
-          }
-
-          return (
-            <div key={index} className="service-card glass">
-              <div className="service-content">
-                <h2>{service.title}</h2>
-                <p>{service.description}</p>
-                <button className="btn-primary mt-4">Learn More</button>
+    <div className="services-page">
+      <PageHero 
+        title="OUR"
+        subtitle="SERVICES"
+        videoSrc="/my_work/CGI/bookfiled.mp4"
+        effect={FloatingGeometry}
+        metaText="END-TO-END PRODUCTION PIPELINE"
+      />
+      
+      <section className="services-content section-padding container">
+        <div className="services-grid">
+          
+          <div className="services-text" style={{gridColumn: '1 / -1'}}>
+            <h2 className="tech-heading text-yellow mb-6 text-center">WHAT WE DO</h2>
+            <p className="tech-body mb-6 text-center mx-auto" style={{maxWidth: '800px'}}>
+              Our studio provides a full spectrum of digital creation services. We handle everything from initial concept visualization to final post-production rendering.
+            </p>
+            <div className="what-we-do-grid mt-12">
+              <div className="feature-card glass">
+                <h3 className="feature-number text-yellow">01 //</h3>
+                <h4 className="feature-title">3D ANIMATION & CGI</h4>
+                <p className="tech-body text-secondary mt-2">Character animation, product rendering, and full CGI environments.</p>
               </div>
-              {bgMedia && (
-                <div className="service-bg">
-                  {bgMedia.endsWith('.mp4') ? (
-                    <video src={bgMedia} autoPlay loop muted playsInline className="service-media" />
-                  ) : (
-                    <img src={bgMedia} alt={service.title} className="service-media" loading="lazy" />
-                  )}
-                  <div className="service-overlay"></div>
-                </div>
-              )}
+              <div className="feature-card glass">
+                <h3 className="feature-number text-yellow">02 //</h3>
+                <h4 className="feature-title">VISUAL EFFECTS (VFX)</h4>
+                <p className="tech-body text-secondary mt-2">Compositing, rotoscoping, matte painting, and dynamic simulations.</p>
+              </div>
+              <div className="feature-card glass">
+                <h3 className="feature-number text-yellow">03 //</h3>
+                <h4 className="feature-title">ARCHITECTURAL VISUALIZATION</h4>
+                <p className="tech-body text-secondary mt-2">Photorealistic interior and exterior renders for real estate.</p>
+              </div>
+              <div className="feature-card glass">
+                <h3 className="feature-number text-yellow">04 //</h3>
+                <h4 className="feature-title">360° VR EXPERIENCES</h4>
+                <p className="tech-body text-secondary mt-2">Immersive virtual reality tours and interactive 360-degree videos.</p>
+              </div>
+              <div className="feature-card glass">
+                <h3 className="feature-number text-yellow">05 //</h3>
+                <h4 className="feature-title">MOTION GRAPHICS</h4>
+                <p className="tech-body text-secondary mt-2">Sleek title sequences, UI animations, and promotional graphics.</p>
+              </div>
             </div>
-          )
-        })}
-      </div>
+          </div>
+          
+        </div>
+      </section>
+
+      {/* NEW CAPABILITIES SHOWCASE */}
+      <section className="capabilities-section section-padding container">
+        <div className="text-center mb-12">
+          <h2 className="tech-heading text-yellow">CAPABILITIES SHOWCASE</h2>
+          <p className="tech-body mt-2">A glimpse into our visual effects workflows.</p>
+        </div>
+        <div className="capabilities-3d-scene">
+          <div className="capability-3d-card card-dark">
+             <video src="/my_work/CINEMATIC/bike.mp4" autoPlay loop muted playsInline></video>
+             <h3 className="card-title mt-4">AUTOMOTIVE CGI</h3>
+             <p className="card-desc mt-2">High-end product rendering and animation.</p>
+          </div>
+          <div className="capability-3d-card card-light">
+             <video src="/my_work/CINEMATIC/half_robo_action.mp4" autoPlay loop muted playsInline></video>
+             <h3 className="card-title mt-4">CHARACTER ANIMATION</h3>
+             <p className="card-desc mt-2">Rigging, animation, and motion capture cleanup.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* FULL WIDTH VR SHOWCASE */}
+      <section className="full-width-vr-section">
+        <div className="vr-header-overlay">
+          <h2 className="tech-heading-large text-yellow shadow-text">VR SANDBOX</h2>
+          <p className="tech-subheading">CLICK AND DRAG TO EXPLORE THE 360° ENVIRONMENT</p>
+        </div>
+        <div className="full-vr-container">
+          <PanoramaViewer imagePath="/my_work/360,VR/Panorama8_000.jpg" />
+        </div>
+      </section>
+
     </div>
   );
 };

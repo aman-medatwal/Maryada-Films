@@ -1,0 +1,52 @@
+/* Custom Cursor Styles */
+.custom-cursor-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 6px;
+  height: 6px;
+  background-color: #ffaa00;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: width 0.2s, height 0.2s;
+}
+
+.custom-cursor-outline {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 30px;
+  height: 30px;
+  border: 1px solid rgba(255, 170, 0, 0.5);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  /* Only transition visual states, let JS handle position */
+  transition-property: width, height, background-color, border-color;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-out;
+}
+
+/* Active State (Hovering over links/buttons) */
+.custom-cursor-dot.active {
+  width: 0px;
+  height: 0px;
+}
+
+.custom-cursor-outline.active {
+  width: 50px;
+  height: 50px;
+  background-color: rgba(255, 170, 0, 0.1);
+  border-color: #ffaa00;
+}
+
+/* Hide default cursor globally */
+body {
+  cursor: none;
+}
+a, button, [style*="cursor: pointer"] {
+  cursor: none !important;
+}

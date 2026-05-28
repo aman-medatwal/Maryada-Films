@@ -19,7 +19,7 @@ const GalleryGrid = () => {
         {categories.map((category) => (
           <button
             key={category}
-            className={`filter-btn ${activeCategory === category ? 'active' : ''}`}
+            className={`filter-btn-luxury ${activeCategory === category ? 'active' : ''}`}
             onClick={() => setActiveCategory(category)}
           >
             {category.replace(/_/g, ' ')}
@@ -27,17 +27,17 @@ const GalleryGrid = () => {
         ))}
       </div>
 
-      <div className="gallery-grid animate-slide-up delay-200">
+      <div className="gallery-grid-luxury animate-slide-up delay-200">
         {items.map((item, index) => (
-          <div key={index} className="gallery-item glass">
+          <div key={index} className="gallery-item-luxury">
             {item.type === 'video' ? (
               <video 
                 src={item.src} 
-                className="gallery-media" 
+                className="gallery-media-luxury" 
                 muted 
                 loop 
                 preload="none"
-                poster="" // Could add a generic poster here
+                poster=""
                 onMouseOver={e => e.target.play()} 
                 onMouseOut={e => {
                   e.target.pause();
@@ -45,14 +45,19 @@ const GalleryGrid = () => {
                 }}
               />
             ) : item.type === 'image' ? (
-              <img src={item.src} alt={item.filename} className="gallery-media" loading="lazy" />
-            ) : (
-              <div className="document-placeholder">
-                <p>{item.filename}</p>
+              <img src={item.src} alt={item.filename} className="gallery-media-luxury" loading="lazy" />
+            ) : null}
+            
+            <div className="gallery-overlay-luxury">
+              <div className="overlay-top">
+                <span className="category-tag">{activeCategory.replace(/_/g, ' ')}</span>
               </div>
-            )}
-            <div className="gallery-overlay">
-              <p className="item-title">{item.filename.split('.')[0].replace(/_/g, ' ')}</p>
+              <div className="overlay-center">
+                <div className="view-btn">VIEW</div>
+              </div>
+              <div className="overlay-bottom">
+                <p className="item-title-luxury">{item.filename.split('.')[0].replace(/_/g, ' ')}</p>
+              </div>
             </div>
           </div>
         ))}

@@ -1,70 +1,107 @@
-.contact-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
+/* Contact Page - Glass Card UI */
+.contact-page.dark-theme {
+  background-color: #050505;
+  color: #fff;
+  position: relative;
+  min-height: 100vh;
+  overflow-x: hidden;
 }
 
-.contact-info, .contact-form {
-  padding: 40px;
-  border-radius: 12px;
+.contact-form-section {
+  position: relative;
+  padding: 100px 0;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.contact-info h2 {
-  font-family: 'Cinzel', serif;
-  font-size: 2rem;
-  margin-bottom: 20px;
-  color: var(--accent);
-}
-
-.contact-info > p {
-  color: var(--text-secondary);
-  margin-bottom: 40px;
-  font-size: 1.1rem;
-}
-
-.info-item {
-  margin-bottom: 25px;
-}
-
-.info-item h4 {
-  color: var(--accent);
-  margin-bottom: 5px;
-  font-family: 'Outfit', sans-serif;
-  letter-spacing: 1px;
-}
-
-.info-item p {
-  color: var(--text-secondary);
-}
-
-.form-group {
-  margin-bottom: 25px;
-}
-
-.form-group input, .form-group textarea {
+/* 3D Background */
+.contact-3d-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  padding: 15px;
-  background: rgba(255,255,255,0.05);
-  border: 1px solid var(--glass-border);
-  border-radius: 4px;
-  color: var(--text-primary);
+  height: 100%;
+  z-index: 0;
+  /* Blur the spheres to create the soft glowing gradient effect */
+  filter: blur(80px) opacity(0.5);
+  pointer-events: none;
+}
+
+.contact-content {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* Glassmorphism Card (Dark Theme) */
+.glass-form-card.dark-glass {
+  background: rgba(10, 10, 10, 0.6);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 170, 0, 0.2);
+  border-radius: 24px;
+  padding: 50px;
+  width: 100%;
+  max-width: 550px;
+  box-shadow: 
+    0 30px 60px rgba(0, 0, 0, 0.8), 
+    inset 0 1px 2px rgba(255, 255, 255, 0.1);
+  transition: transform 0.1s ease-out; /* Smooth tilt */
+  transform-style: preserve-3d;
+}
+
+.glass-card-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* Form Styles (Dark Theme) */
+.dark-form .form-group {
+  margin-bottom: 20px;
+}
+
+.dark-form label {
+  display: block;
   font-family: 'Outfit', sans-serif;
-  font-size: 1rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #ffaa00; /* Yellow labels */
+  margin-bottom: 8px;
+  letter-spacing: 2px;
+}
+
+.dark-form input,
+.dark-form textarea {
+  width: 100%;
+  padding: 14px 16px;
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  color: #fff;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.95rem;
+  outline: none;
   transition: all 0.3s ease;
 }
 
-.form-group input:focus, .form-group textarea:focus {
-  outline: none;
-  border-color: var(--accent);
-  background: rgba(255,255,255,0.1);
+.dark-form input:focus,
+.dark-form textarea:focus {
+  background: rgba(0, 0, 0, 0.8);
+  border-color: #ffaa00;
+  box-shadow: 0 0 15px rgba(255, 170, 0, 0.2);
 }
 
-.form-group textarea {
-  resize: vertical;
+.dark-form input::placeholder,
+.dark-form textarea::placeholder {
+  color: #666;
 }
 
-@media (max-width: 900px) {
-  .contact-container {
-    grid-template-columns: 1fr;
+@media (max-width: 600px) {
+  .glass-form-card.dark-glass {
+    padding: 30px 20px;
   }
 }

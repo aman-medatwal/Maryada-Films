@@ -1,99 +1,185 @@
+/* LUXURY GALLERY GRID STYLES */
 .gallery-container {
   width: 100%;
 }
 
 .gallery-filters {
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
   gap: 15px;
-  margin-bottom: 50px;
+  margin-bottom: 40px;
+  justify-content: flex-start;
 }
 
-.filter-btn {
-  background: transparent;
-  color: var(--text-secondary);
-  border: 1px solid var(--glass-border);
-  padding: 8px 20px;
-  border-radius: 30px;
-  cursor: pointer;
+.filter-btn-luxury {
+  background: linear-gradient(145deg, #1a1a1a, #050505);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 10px 24px;
+  border-radius: 50px;
   text-transform: uppercase;
-  font-size: 0.85rem;
-  letter-spacing: 1px;
-  transition: all 0.3s ease;
-}
-
-.filter-btn:hover, .filter-btn.active {
-  background: var(--accent);
-  color: var(--primary-bg);
-  border-color: var(--accent);
-}
-
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 20px;
-}
-
-.gallery-item {
-  position: relative;
-  border-radius: 8px;
-  overflow: hidden;
-  aspect-ratio: 16 / 9;
+  letter-spacing: 2px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  font-family: 'Outfit', sans-serif;
   cursor: pointer;
+  transition: all 0.2s ease;
+  
+  /* 3D Extrusion */
+  box-shadow: 
+    0 4px 0 #000, 
+    0 8px 15px rgba(0,0,0,0.6), 
+    inset 0 1px 1px rgba(255,255,255,0.1),
+    inset 0 -1px 3px rgba(0,0,0,0.5);
 }
 
-.gallery-media {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.filter-btn-luxury:hover {
+  background: linear-gradient(145deg, #222, #0a0a0a);
+  color: #ffaa00;
+  border-color: rgba(255, 170, 0, 0.3);
+  box-shadow: 
+    0 4px 0 #000, 
+    0 10px 20px rgba(255,170,0,0.1), 
+    inset 0 1px 1px rgba(255,255,255,0.15),
+    inset 0 -1px 3px rgba(0,0,0,0.5);
+}
+
+.filter-btn-luxury:active, .filter-btn-luxury.active {
+  color: #050505;
+  background: #ffaa00;
+  border-color: #ffaa00;
+  transform: translateY(4px);
+  box-shadow: 
+    0 0 0 #000, 
+    0 4px 10px rgba(0,0,0,0.6), 
+    inset 0 1px 1px rgba(255,255,255,0.05),
+    inset 0 -1px 3px rgba(0,0,0,0.5);
+}
+
+.gallery-grid-luxury {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 20px;
+  grid-auto-rows: 250px;
+}
+
+/* Asymmetric Masonry Simulation via n-th child sizing */
+.gallery-item-luxury {
+  position: relative;
+  overflow: hidden;
+  border-radius: 4px;
+  background: #111;
   transition: transform 0.5s ease;
 }
 
-.gallery-item:hover .gallery-media {
+.gallery-item-luxury:nth-child(4n - 3) {
+  grid-row: span 2;
+  grid-column: span 2;
+}
+.gallery-item-luxury:nth-child(4n) {
+  grid-row: span 2;
+}
+
+@media (max-width: 768px) {
+  .gallery-item-luxury:nth-child(4n - 3),
+  .gallery-item-luxury:nth-child(4n) {
+    grid-row: span 1;
+    grid-column: span 1;
+  }
+}
+
+.gallery-media-luxury {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s ease;
+}
+
+.gallery-item-luxury:hover .gallery-media-luxury {
   transform: scale(1.05);
 }
 
-.gallery-overlay {
+.gallery-overlay-luxury {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(to top, rgba(5,5,5,0.9), transparent);
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
   display: flex;
-  align-items: flex-end;
-  padding: 20px;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 30px;
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: all 0.4s ease;
 }
 
-.gallery-item:hover .gallery-overlay {
+.gallery-item-luxury:hover .gallery-overlay-luxury {
   opacity: 1;
+  background: rgba(0, 0, 0, 0.7);
 }
 
-.item-title {
-  color: #fff;
-  font-family: 'Cinzel', serif;
-  font-size: 1.1rem;
-  font-weight: 600;
-  text-transform: capitalize;
-  transform: translateY(20px);
-  transition: transform 0.3s ease;
+.overlay-top {
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-20px);
+  transition: all 0.4s ease;
 }
 
-.gallery-item:hover .item-title {
+.gallery-item-luxury:hover .overlay-top {
   transform: translateY(0);
 }
 
-.document-placeholder {
-  width: 100%;
-  height: 100%;
+.category-tag {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 4px 12px;
+  border-radius: 20px;
+}
+
+.overlay-center {
   display: flex;
-  align-items: center;
   justify-content: center;
-  background: var(--glass-bg);
-  padding: 20px;
-  text-align: center;
-  color: var(--text-secondary);
+  align-items: center;
+}
+
+.view-btn {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: rgba(212, 175, 55, 0.9);
+  color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Cinzel', serif;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  transform: scale(0.5);
+  opacity: 0;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.gallery-item-luxury:hover .view-btn {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.overlay-bottom {
+  transform: translateY(20px);
+  transition: all 0.4s ease;
+}
+
+.gallery-item-luxury:hover .overlay-bottom {
+  transform: translateY(0);
+}
+
+.item-title-luxury {
+  font-family: 'Cinzel', serif;
+  font-size: 1.5rem;
+  color: #fff;
+  letter-spacing: 2px;
+  text-transform: capitalize;
 }

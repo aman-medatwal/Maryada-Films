@@ -1,0 +1,75 @@
+/* NEW PAGES CSS (Careers & Case Studies) */
+
+/* Careers Page */
+.job-listings {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.job-card {
+  padding: 30px;
+  border-top: 2px solid var(--accent);
+  transition: transform 0.3s ease;
+}
+
+.job-card:hover {
+  transform: translateY(-5px);
+  border-top-color: #fff;
+}
+
+/* Case Studies Page */
+.case-study-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+@media (min-width: 992px) {
+  .case-study-card {
+    flex-direction: row;
+    height: 400px;
+  }
+  .case-study-card.reverse {
+    flex-direction: row-reverse;
+  }
+}
+
+.case-study-video {
+  flex: 1;
+  background: #000;
+  position: relative;
+}
+
+.case-study-video video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.case-study-details {
+  flex: 1;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.tech-badges {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.badge {
+  background: rgba(255, 170, 0, 0.1);
+  border: 1px solid rgba(255, 170, 0, 0.3);
+  color: #ffaa00;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
