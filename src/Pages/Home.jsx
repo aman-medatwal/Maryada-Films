@@ -107,11 +107,11 @@ const Home = () => {
         </div>
       </section>
 
-      {/* 5. MASTERPIECE SECTION (all_sample.mp4) */}
+      {/* 5. MASTERPIECE SECTION (03_logo_.mp4) */}
       <section className="home-masterpiece-section">
         <div className="masterpiece-bg">
           <video 
-            src="/my_work/logo/all_sample.mp4" 
+            src="/my_work/logo/03_logo_.mp4" 
             autoPlay 
             loop 
             muted 

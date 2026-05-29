@@ -11,10 +11,19 @@ node_modules
 dist
 dist-ssr
 *.local
-# Ignore large files in my_work but allow images
-public/my_work/**/*.mp4
-public/my_work/**/*.mov
+# Ignore large files in my_work
 public/my_work/**/*.zip
+public/my_work/**/*.mov
+public/my_work/pocket_hikayat/
+public/my_work/sadhu_fight/fight.mp4
+public/my_work/sadhu_fight/menimal_fight.mp4
+public/my_work/STYLE/heaven.mp4
+public/my_work/STYLE/high_beach_.mp4
+public/my_work/Architectural Visualization/Residential plots.mp4
+public/my_work/Architectural Visualization/shayona_backup01.mp4
+public/my_work/CINEMATIC/Jivanji.mp4
+public/my_work/CINEMATIC/waterfall_render.mp4
+public/my_work/logo/all_sample.mp4
 
 # Editor directories and files
 .vscode/*

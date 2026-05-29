@@ -25,7 +25,7 @@ const showcaseItems = [
     title: "RESIDENTIAL PLOTS",
     category: "ARCH VIZ",
     type: "video",
-    src: "/my_work/Architectural Visualization/Residential plots.mp4",
+    src: "/my_work/360,VR/VR_Android.mp4",
     poster: "/my_work/Architectural Visualization/01_room.png",
   },
   {
@@ -33,7 +33,7 @@ const showcaseItems = [
     title: "COASTAL HIGHWAY",
     category: "CINEMATIC",
     type: "video",
-    src: "/my_work/CINEMATIC/high_beach_.mp4",
+    src: "/my_work/CINEMATIC/wolf.mp4",
     poster: "",
   },
   {

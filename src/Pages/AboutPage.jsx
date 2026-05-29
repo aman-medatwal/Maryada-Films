@@ -40,7 +40,7 @@ const AboutPage = () => {
       <PageHero 
         title="ABOUT"
         subtitle="THE STUDIO"
-        videoSrc="/my_work/pocket_hikayat/01_Khuda par Yakeen.mp4"
+        videoSrc="/my_work/CINEMATIC/citysample.mp4"
         effect={WireframeGlobe}
         metaText="EST. 2010 &middot; MUMBAI"
       />
