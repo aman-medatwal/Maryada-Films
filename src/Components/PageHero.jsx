@@ -10,7 +10,7 @@ const PageHero = ({ title, subtitle, videoSrc, effect, metaText }) => {
     <section className="page-hero-section">
       <ThreeEffectCanvas effect={effect} />
       
-      <div className="page-hero-bg-container">
+      <div className={`page-hero-bg-container ${isPlaying ? 'playing' : ''}`}>
         <video 
           className={`page-hero-bg-video ${isPlaying ? 'playing' : ''}`}
           src={videoSrc} 

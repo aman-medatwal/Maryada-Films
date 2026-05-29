@@ -173,3 +173,13 @@
   background: #ffaa00;
   color: #000;
 }
+
+.page-hero-overlay.fade-out {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.page-hero-bg-container.playing {
+  z-index: 15;
+}
+
