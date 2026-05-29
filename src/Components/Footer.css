@@ -77,9 +77,37 @@
 }
 
 .footer-bottom {
-  text-align: center;
-  padding: 25px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 5%;
   border-top: 1px solid rgba(255, 255, 255, 0.05);
   color: var(--text-secondary);
   font-size: 0.9rem;
+}
+
+.developer-credits {
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  margin: 0;
+}
+
+.copyright-text {
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .footer-bottom {
+    flex-direction: column-reverse;
+    gap: 15px;
+    text-align: center;
+    padding: 25px 20px;
+  }
+}
+
+.highlight-name {
+  color: var(--accent);
+  font-weight: 600;
+  font-family: 'Cinzel', serif;
+  letter-spacing: 1.5px;
 }

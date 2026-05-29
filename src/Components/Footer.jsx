@@ -9,7 +9,7 @@ const Footer = () => {
       <div className="container footer-content">
         <div className="footer-brand animate-slide-up">
           <Link to="/" className="navbar-logo">
-            MARYADA<span>FILMS</span>
+            <img src="/web_work/logo/MARDAYA FILMS Logo monogram.png" alt="Maryada Films Logo" className="monogram-logo" style={{height: '55px', marginBottom: '10px'}} />
           </Link>
           <p className="footer-tagline">Crafting Cinematic Masterpieces.</p>
           <div className="social-links">
@@ -39,7 +39,10 @@ const Footer = () => {
       </div>
       
       <div className="footer-bottom">
-        <p>&copy; {new Date().getFullYear()} Maryada Films. All Rights Reserved.</p>
+        <p className="developer-credits">
+          Designed & Developed by <span className="highlight-name">Aman</span> & <span className="highlight-name">Bhuvan</span>
+        </p>
+        <p className="copyright-text">&copy; {new Date().getFullYear()} Maryada Films. All Rights Reserved.</p>
       </div>
     </footer>
   );

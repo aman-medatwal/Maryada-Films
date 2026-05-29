@@ -20,16 +20,19 @@
 }
 
 .navbar-logo {
-  font-family: 'Cinzel', serif;
-  font-size: 1.8rem;
-  font-weight: 700;
-  color: var(--text-primary);
-  letter-spacing: 2px;
+  display: flex;
+  align-items: center;
 }
 
-.navbar-logo span {
-  color: var(--accent);
-  font-weight: 400;
+.monogram-logo {
+  height: 45px;
+  width: auto;
+  filter: brightness(0) invert(1);
+  transition: transform 0.3s ease;
+}
+
+.monogram-logo:hover {
+  transform: scale(1.05);
 }
 
 .desktop-menu {

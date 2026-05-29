@@ -34,7 +34,7 @@ useState(false);
     <nav className={`navbar ${isScrolled ? 'scrolled glass' : ''}`}>
       <div className="navbar-container container">
         <Link to="/" className="navbar-logo">
-          MARYADA<span>FILMS</span>
+          <img src="/web_work/logo/MARDAYA FILMS Logo monogram.png" alt="Maryada Films Logo" className="monogram-logo" />
         </Link>
         
         <div className="desktop-menu">
