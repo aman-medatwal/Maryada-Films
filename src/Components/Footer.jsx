@@ -32,7 +32,7 @@ const Footer = () => {
 
         <div className="footer-contact animate-slide-up delay-300">
           <h3>Contact Us</h3>
-          <p>hello@maryadafilms.com</p>
+          <p>maryadafilms@gmail.com</p>
           <p>+91 98765 43210</p>
           <p>Mumbai, Maharashtra, India</p>
         </div>

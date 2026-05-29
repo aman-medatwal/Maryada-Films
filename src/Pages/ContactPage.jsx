@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import PageHero from '../Components/PageHero';
 import { Starfield, GlowingSpheresBackground } from '../Components/ThreeEffects';
 import { Canvas } from '@react-three/fiber';
@@ -6,6 +6,9 @@ import './ContactPage.css';
 
 const ContactPage = () => {
   const formCardRef = useRef(null);
+  const [formData, setFormData] = useState({ name: '', email: '', details: '' });
+  const [status, setStatus] = useState('idle'); // idle, loading, success, error
+  const [message, setMessage] = useState('');
 
   // 3D Tilt Effect for the Glass Card
   const handleMouseMove = (e) => {
@@ -27,6 +30,44 @@ const ContactPage = () => {
   const handleMouseLeave = () => {
     if (!formCardRef.current) return;
     formCardRef.current.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
+  };
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!formData.name || !formData.email || !formData.details) {
+      setMessage('Please fill in all fields.');
+      setStatus('error');
+      return;
+    }
+
+    setStatus('loading');
+    setMessage('');
+
+    try {
+      const response = await fetch('/api/transmit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        setStatus('success');
+        setMessage('Transmission successful! We will be in touch shortly.');
+        setFormData({ name: '', email: '', details: '' });
+      } else {
+        setStatus('error');
+        setMessage(result.message || 'An error occurred. Please try again.');
+      }
+    } catch (error) {
+      setStatus('error');
+      setMessage('Failed to connect to the server. Please try again later.');
+    }
   };
 
   return (
@@ -65,20 +106,29 @@ const ContactPage = () => {
               <p className="tech-body text-secondary">Fill out the details below and we will get back to you shortly.</p>
             </div>
             
-            <form className="glass-form dark-form">
+            <form className="glass-form dark-form" onSubmit={handleSubmit}>
               <div className="form-group">
                 <label>NAME</label>
-                <input type="text" placeholder="John Doe" />
+                <input type="text" name="name" value={formData.name} onChange={handleChange} placeholder="John Doe" disabled={status === 'loading'} />
               </div>
               <div className="form-group">
                 <label>EMAIL</label>
-                <input type="email" placeholder="john@example.com" />
+                <input type="email" name="email" value={formData.email} onChange={handleChange} placeholder="john@example.com" disabled={status === 'loading'} />
               </div>
               <div className="form-group">
                 <label>PROJECT DETAILS</label>
-                <textarea rows="4" placeholder="Tell us about your vision..."></textarea>
+                <textarea rows="4" name="details" value={formData.details} onChange={handleChange} placeholder="Tell us about your vision..." disabled={status === 'loading'}></textarea>
               </div>
-              <button type="button" className="btn-primary w-full mt-6" style={{width: '100%'}}>TRANSMIT</button>
+              
+              {message && (
+                <div className={`form-message ${status}`}>
+                  {message}
+                </div>
+              )}
+
+              <button type="submit" className="btn-primary w-full mt-6" style={{width: '100%'}} disabled={status === 'loading'}>
+                {status === 'loading' ? 'TRANSMITTING...' : 'TRANSMIT'}
+              </button>
             </form>
           </div>
         </div>
@@ -88,3 +138,4 @@ const ContactPage = () => {
 };
 
 export default ContactPage;
+

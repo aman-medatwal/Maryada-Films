@@ -910,14 +910,19 @@
   }
 
   .hero-bottom-bar {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
   }
 
-  .hero-bottom-bar span {
-    display: none;
+  .scroll-pill {
+    display: none !important;
+  }
+
+  .sound-pill {
+    justify-content: center;
   }
 
   .hero-bottom-bar a {
-    border-left: 0;
+    border-left: 1px solid var(--line);
   }
 }
+

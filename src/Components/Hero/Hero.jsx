@@ -272,8 +272,10 @@ const Hero = () => {
   const canvasRef = useRef(null);
   const stageRef = useRef(null);
   const cursorRef = useRef(null);
+  const videoRef = useRef(null);
   const progressRef = useRef(0);
   const [scrollProgress, setScrollProgress] = useState(0);
+  const [isMuted, setIsMuted] = useState(true);
 
   const showreel = [
     { label: "01", title: "CGI Films", text: "Cinematic 2D/3D animation, trailers and polished story visuals." },
@@ -573,6 +575,13 @@ const Hero = () => {
     };
   }, []);
 
+  const toggleMute = () => {
+    setIsMuted(!isMuted);
+    if (videoRef.current) {
+      videoRef.current.muted = !isMuted;
+    }
+  };
+
   const panelStyle = (index) => {
     const offset = index - scenePosition;
     const visibility = clamp(1 - Math.abs(offset) * 1.45);
@@ -587,7 +596,7 @@ const Hero = () => {
   return (
     <main className="home-page" style={{ "--scroll-progress": scrollProgress, "--cube-progress": cubeProgress }}>
       <section className="hero" aria-label="Maryada Films scroll story">
-        <video className="bg-video" autoPlay muted loop playsInline>
+        <video className="bg-video" ref={videoRef} autoPlay muted={isMuted} loop playsInline>
           <source src={video} type="video/mp4" />
         </video>
         <div className="hero-overlay" />
@@ -723,7 +732,9 @@ const Hero = () => {
             </section>
 
             <div className="hero-bottom-bar">
-              <span className="sound-pill">Sound Off</span>
+              <span className="sound-pill" onClick={toggleMute} style={{cursor: 'pointer'}}>
+                {isMuted ? 'Sound Off' : 'Sound On'}
+              </span>
               <span className="scroll-pill">{String(activeScene + 1).padStart(2, "0")} / {String(scenes.length).padStart(2, "0")} Scroll To Explore</span>
               <Link to="/start-project">Chat With Us</Link>
             </div>

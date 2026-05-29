@@ -100,8 +100,36 @@
   color: #666;
 }
 
-@media (max-width: 600px) {
+.form-message {
+  padding: 12px;
+  border-radius: 4px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  text-align: center;
+  margin-top: 15px;
+}
+
+.form-message.success {
+  background: rgba(0, 255, 136, 0.1);
+  color: #00ff88;
+  border: 1px solid rgba(0, 255, 136, 0.3);
+}
+
+.form-message.error {
+  background: rgba(255, 68, 68, 0.1);
+  color: #ff4444;
+  border: 1px solid rgba(255, 68, 68, 0.3);
+}
+
+@media (max-width: 768px) {
   .glass-form-card.dark-glass {
     padding: 30px 20px;
+    margin: 0 15px;
+    transform: none !important;
+  }
+  
+  .tech-heading {
+    font-size: 1.8rem;
   }
 }
