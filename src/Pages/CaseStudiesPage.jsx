@@ -24,7 +24,7 @@ const CaseStudiesPage = () => {
 
         <div className="case-study-card glass mb-12">
           <div className="case-study-video">
-            <video src="/my_work/CINEMATIC/VELLY.mp4" autoPlay loop muted playsInline preload="metadata"></video>
+            <video src="/my_work/CINEMATIC/waterfall_render.mp4" autoPlay loop muted playsInline preload="metadata"></video>
           </div>
           <div className="case-study-details">
             <h3 className="text-yellow text-2xl mb-2">FLUID DYNAMICS: THE FALL</h3>
@@ -58,7 +58,7 @@ const CaseStudiesPage = () => {
         
         <div className="case-study-card glass mb-12">
           <div className="case-study-video">
-            <video src="/my_work/CINEMATIC/citysample.mp4" autoPlay loop muted playsInline preload="metadata"></video>
+            <video src="/my_work/STYLE/high_beach_.mp4" autoPlay loop muted playsInline preload="metadata"></video>
           </div>
           <div className="case-study-details">
             <h3 className="text-yellow text-2xl mb-2">ENVIRONMENTAL: COASTAL HIGHWAY</h3>
